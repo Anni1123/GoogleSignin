@@ -5,6 +5,21 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".DashboardActivity">
+
+    <Button
+        android:id="@+id/Savdata"
+        android:layout_width="300dp"
+        android:layout_height="100dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="168dp"
+        android:padding="10dp"
+        android:text="Add Data"
+
+        android:textColor="#000"
+        android:textSize="40sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
     <Button
         android:id="@+id/logout"
         android:layout_width="300dp"

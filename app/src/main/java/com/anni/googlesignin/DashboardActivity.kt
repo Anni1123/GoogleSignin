@@ -28,7 +28,11 @@ class DashboardActivity : AppCompatActivity() {
             .build()
         mGoogleSignInClient= GoogleSignIn.getClient(this,gso)
 
-
+        Savdata.setOnClickListener{
+            val intent= Intent(this, AddData::class.java)
+            startActivity(intent)
+            finish()
+        }
         logout.setOnClickListener {
             mGoogleSignInClient.signOut().addOnCompleteListener {
                 val intent= Intent(this, MainActivity::class.java)
