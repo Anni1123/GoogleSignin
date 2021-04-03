@@ -18,5 +18,23 @@
         android:padding="20dp"
         android:textColor="#000"
         android:text="Google Sign In"/>
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/Toast"
+        android:textSize="22sp"
+        android:layout_margin="20dp"
+        android:padding="20dp"
+        android:textColor="#000"
+        android:text="Toast"/>
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/Stars"
+        android:textSize="22sp"
+        android:layout_margin="20dp"
+        android:padding="20dp"
+        android:textColor="#000"
+        android:text="Star"/>
 
 </LinearLayout>

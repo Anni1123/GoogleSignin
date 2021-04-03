@@ -4,7 +4,6 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
-import android.widget.Toast
 import com.google.android.gms.auth.api.signin.GoogleSignIn
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount
 import com.google.android.gms.auth.api.signin.GoogleSignInClient
@@ -14,7 +13,6 @@ import com.google.android.gms.tasks.Task
 import com.google.firebase.FirebaseApp
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.GoogleAuthProvider
-import kotlinx.android.synthetic.main.activity_dashboard.*
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
@@ -28,18 +26,24 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         FirebaseApp.initializeApp(this)
-
         val gso = GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
             .requestIdToken(getString(R.string.default_web_client_id))
             .requestEmail()
             .build()
         mGoogleSignInClient= GoogleSignIn.getClient(this,gso)
-
         firebaseAuth= FirebaseAuth.getInstance()
-
         Signin.setOnClickListener{ view: View? ->
-            Toast.makeText(this,"Logging In",Toast.LENGTH_SHORT).show()
             signInGoogle()
+        }
+        Toast.setOnClickListener{ view: View? ->
+            startActivity(Intent(this, BalloonToast
+            ::class.java))
+            finish()
+        }
+        Stars.setOnClickListener{ view: View? ->
+            startActivity(Intent(this, StarAnimation
+            ::class.java))
+            finish()
         }
 
     }
@@ -66,7 +70,6 @@ class MainActivity : AppCompatActivity() {
                 UpdateUI(account)
             }
         } catch (e: ApiException){
-            Toast.makeText(this,e.toString(), Toast.LENGTH_SHORT).show()
         }
     }
 
